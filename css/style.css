@@ -1,0 +1,428 @@
+/* Reset & Clearfix
+============================*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+
+
+/* Colors & Backgrounds
+============================*/
+
+/* color palette
+    UK2Group orange: rgb(247, 138, 22) / Hex: #f78a16
+    Black: rgb(0, 0, 0) / Hex: #000
+    White: rgb(255, 255, 255) / Hex #fff
+*/
+
+body {
+    color: #000;
+    background-color: #fff;
+}
+
+header, footer {
+    background: #000;
+    color: #fff;
+}
+
+header {
+    background: url('../_assets/banner.jpg') bottom center / cover no-repeat;
+}
+
+
+/* Typography
+============================*/
+
+
+
+body {
+    font: normal 1.25em/100% 'Arvo', serif;
+}
+
+h1, h2, nav {
+    font: bold 3.75em/75% 'Source Sans Pro', sans-serif;
+}
+
+h1:first-of-type {
+    letter-spacing: -7px;
+}
+
+h1:last-of-type {
+    font:  2.75em/45% 'Anivers', sans-serif;
+    font-variant: small-caps;
+    letter-spacing: -4px;
+    text-indent: 4px;
+}
+
+h2 {
+    font-size: 2.75rem;
+    letter-spacing: -2px;
+}
+
+nav {
+    font-weight: normal;
+    font-size: 1em;
+    letter-spacing: 100%;
+}
+
+p {
+    line-height: 1.5;
+}
+
+
+
+/* Links
+============================*/
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: rgb(247, 138, 22);
+}
+
+a:visited {
+    color: inherit;
+}
+
+/* this is for whatever query is active, color will change to help user know which one they are currently using */
+.active-query a {
+    color: #000;
+}
+
+
+
+/* Header & Nav
+============================*/
+
+#title {
+    padding: 15% 0 0 5%;
+}
+
+nav ul{
+    margin: 50px 0 0 0;
+}
+
+nav ul li{
+    display: block;
+    text-align: center;
+    
+    border-bottom: 1px solid #fff;
+}
+
+nav a, nav a:hover {
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    background: rgba(247, 138, 22, 0.80);
+    
+    transition: .5s;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+nav a:active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Wrapper
+============================*/
+
+#wrapper {
+    margin: 0 auto;
+    padding: 30px 15px;
+}
+
+h2 {
+    padding: 50px 0 20px 0;
+}
+
+#lookup h2 {
+    padding: 30px 0 20px 0;
+}
+
+#lookup input, #lookup select {
+    width: 100%;
+    border-radius: 3px;
+    background: rgba(247, 138, 22, 0.85);
+    border: 1px solid black;
+    font-size: 1rem;
+    padding: 10px 0 10px 0;
+    margin: 0 0 10px 0;
+    font-family: inherit;
+}
+
+input[type="search"]:focus, #lookup textarea:focus {
+    box-shadow: inset #666 0 0 15px;
+}
+
+#lookup input[type="button"] {
+    color: #fff;
+    background: #000;
+}
+
+#lookup input[type="button"]:hover {
+    transition: .5s;
+    background: #fff;
+    color: #000;
+} 
+
+#lookup input[type="button"]:active {
+    background: rgba(247, 138, 22, 0.80);
+}
+
+input[type="search"]::-webkit-input-placeholder {
+    text-align: center;
+}
+
+input[type="search"] input-placeholder {
+    text-align: center;
+}
+
+::-webkit-input-placeholder {
+    color: #000;
+}
+
+input-placeholder {
+    color: #000;
+}
+
+#lookup-results, #lookup textarea {
+    display: block;
+    width: 100%;
+    margin: 0, auto;
+    height: 200px;
+    background-color: #ddd;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 0 0 10px 0;
+    text-indent: 5px;
+    padding-top: 5px;
+    font-size: 1rem;
+}
+
+#record-description p {
+    text-indent: 15px;
+}
+
+
+/* Footer
+============================*/
+
+footer {
+    padding: 50px 25px;
+    text-align: center;
+    font-size: 0.75em;
+}
+
+footer a, footer p {
+    padding: 10px;
+}
+
+
+footer ul li:nth-child(n+2) img {
+    width: 45px;
+    margin-top: 10px;
+}
+
+#logo img {
+    width: 150px;
+    margin: 10px;
+}
+
+
+
+/* Media Queries
+============================*/
+
+@media screen and (min-width: 600px) {
+    
+    nav {
+        background: rgba(247, 138, 22, 0.80);
+        margin: 30px 0 30px 0 ;
+    }
+    
+    nav ul {
+        padding: 0;
+        text-align: center;
+    }
+    
+    nav ul li{
+        display: inline-block;
+        padding: 0 1%;
+        border: none;
+    }
+    
+    nav ul li a, nav ul li a:hover {
+        background: none;
+        border: none;
+    }
+    
+    nav ul li a:active, nav ul li a:active {
+        text-shadow: #000 0 0 15px;
+    }
+    
+    #wrapper {
+        padding-top: 0;
+        width: 80%;
+    } 
+}
+
+@media screen and (min-width: 800px) {
+    
+    #wrapper {
+        width: 65%;
+    }
+    
+    nav ul li{
+        padding: 0 3%;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    
+    #title {
+        padding: 10% 0 0 5%;
+        position: relative;
+    }
+    
+    h1 {
+        font-size: 6em;
+    }
+    
+    h1:last-of-type {
+        font-size: 4.5em;
+    }
+    
+    nav ul li{
+        padding: 0 4%;
+    }
+    
+    #wrapper {
+        width: 95%
+    }
+    
+    #lookup {
+        float: left;
+        width: 45%;
+    }
+    
+    #record-description {
+        float: right;
+        width: 45%;
+    }
+    
+    #record-description h2 {
+        padding: 30px 0 10px 0;
+    }
+    
+    
+       
+}
+
+@media screen and (min-width: 1200px) {
+    
+    footer ul {
+        width: 100%;
+    }
+    
+    footer ul li {
+        display: inline-block;
+        text-decoration: none;
+    }
+    
+    footer ul li:first-child {
+        padding: 0 14% 0 1%;
+    }
+    
+    footer ul li:last-child {
+        padding: 0 1% 0 14%;
+    }
+    
+    footer ul li:nth-child(2n) {
+        position: relative;
+        top: -12px;
+    }  
+}
+
+@media screen and (min-width: 1500px) {
+    #wrapper {
+        max-width: 1400px;
+    }
+    
+    h1 {
+        font-size: 7em;
+    }
+    
+    h1:last-of-type {
+        font-size: 5.5em;
+    }
+    
+    nav ul li{
+        padding: 0 5%;
+    }
+}
