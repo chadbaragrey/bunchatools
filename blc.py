@@ -1,5 +1,5 @@
-#ip_list = re.split('\.', ip)
-#ip_rev = '{3}.{2}.{1}.{0}'.format(ip_list[0], ip_list[1], ip_list[2], ip_list[3])
+# Python Black List checker - Prototype
+# Version 0.0.1
 
 import socket, re
 
