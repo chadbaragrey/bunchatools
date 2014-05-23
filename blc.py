@@ -1,12 +1,11 @@
 # Python Black List checker - Prototype
-# Version 0.0.2
+# Version 0.0.3
 
-import re, socket
+import re, socket, sys, getopt
 	
 #globals
 blacklists = []
-#ip = raw_input('Enter an IP address: ')
-ip = '127.0.0.2' #test ip, shows as on the blacklist
+ip = sys.argv[1]
 ip_rev = ''
 
 #open file with all of the blacklist sites to check.
@@ -23,13 +22,17 @@ def reverse_ip(ip):
 #Check our IP against a list of blacklists, 
 #returns a message if it is on the list or if the BL hostname is invalid.
 def blacklist_check(ip, ip_rev):
+
+	result = ''
+
 	for blist in blacklists:
 		try:
 			socket.gethostbyname(ip_rev + '.' + blist)
-			print 'IP: ' + ip + ' is on the ' + blist + ' blacklist.'
+			result += 'IP: ' + ip + ' is on the ' + blist + ' blacklist.\n'
 			
 		except socket.gaierror:
-			print 'Hostname error.'
-
+			result += 'Hostname error: ' + ip + '.' + blist + ' invalid.\n' 
+	sys.exit(result)
+	
 reverse_ip(ip)
 blacklist_check(ip, ip_rev)
