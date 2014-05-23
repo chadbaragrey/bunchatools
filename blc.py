@@ -1,5 +1,5 @@
 # Python Black List checker - Prototype
-# Version 0.0.3
+# Version 0.0.4
 
 import re, socket, sys, getopt
 	
@@ -23,12 +23,12 @@ def reverse_ip(ip):
 #returns a message if it is on the list or if the BL hostname is invalid.
 def blacklist_check(ip, ip_rev):
 
-	result = ''
+	result = ip + '\n'
 
 	for blist in blacklists:
 		try:
 			socket.gethostbyname(ip_rev + '.' + blist)
-			result += 'IP: ' + ip + ' is on the ' + blist + ' blacklist.\n'
+			result += blist + '\n'
 			
 		except socket.gaierror:
 			result += 'Hostname error: ' + ip + '.' + blist + ' invalid.\n' 
