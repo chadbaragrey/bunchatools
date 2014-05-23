@@ -1,3 +1,21 @@
+/*]
+Check letter-spacing with actual fonts
+
+change text to vw
+
+*/
+
+/* Colors Palette
+============================
+
+UK2Group orange: rgb(247, 138, 22) / Hex: #f78a16
+Black: rgb(0, 0, 0) / Hex: #000
+White: rgb(255, 255, 255) / Hex #fff
+
+*/
+
+
+
 /* Reset & Clearfix
 ============================*/
 
@@ -26,20 +44,41 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-}
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
+::-webkit-input-placeholder {
+    color: #000;
+}
+
+::-moz-input-placeholder {
+    color: #000;
+}
+
+::-ms-input-placeholder {
+    color: #000;
+}
+
+::-o-input-placeholder {
+    color: #000;
+}
+
+::input-placeholder {
+    color: #000;
+}
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -65,14 +104,8 @@ table {
 
 
 
-/* Colors & Backgrounds
+/* General
 ============================*/
-
-/* color palette
-    UK2Group orange: rgb(247, 138, 22) / Hex: #f78a16
-    Black: rgb(0, 0, 0) / Hex: #000
-    White: rgb(255, 255, 255) / Hex #fff
-*/
 
 body {
     color: #000;
@@ -84,48 +117,45 @@ header, footer {
     color: #fff;
 }
 
-header {
-    background: url('../_assets/banner.jpg') bottom center / cover no-repeat;
-}
 
 
 /* Typography
 ============================*/
 
-
-
 body {
-    font: normal 1.25em/100% 'Arvo', serif;
+    font: normal 1.25em/150% 'Arvo', serif;
+    
 }
 
-h1, h2, nav {
-    font: bold 3.75em/75% 'Source Sans Pro', sans-serif;
+h1, h2, h3, h4, nav {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
 }
 
-h1:first-of-type {
-    letter-spacing: -7px;
+h1 {
+    font-weight: bold;
+    font-size: 3.75em;
+    font-size: 8vmax;
+    letter-spacing: -5px;
 }
 
-h1:last-of-type {
-    font:  2.75em/45% 'Anivers', sans-serif;
-    font-variant: small-caps;
-    letter-spacing: -4px;
-    text-indent: 4px;
+.kern {
+    letter-spacing: 1px;
 }
 
 h2 {
-    font-size: 2.75rem;
+    font-size: 2.25rem;
     letter-spacing: -2px;
 }
 
-nav {
+nav a {
     font-weight: normal;
-    font-size: 1em;
-    letter-spacing: 100%;
+    font-size: 1.25rem;
+    text-decoration: none;
 }
 
-p {
-    line-height: 1.5;
+p, textarea  {
+    text-indent: 15px;
 }
 
 
@@ -135,16 +165,22 @@ p {
 
 a {
     color: inherit;
+    transition: 0.5s ease-in-out;
 }
 
 a:hover {
     color: rgb(247, 138, 22);
+    transform: scale(1.25);
+    transition: 0.5s;
 }
 
 a:visited {
     color: inherit;
 }
 
+a:active, input[type="button"]:active {
+    transform: scale(0.75);
+}
 /* this is for whatever query is active, color will change to help user know which one they are currently using */
 .active-query a {
     color: #000;
@@ -155,8 +191,12 @@ a:visited {
 /* Header & Nav
 ============================*/
 
-#title {
-    padding: 15% 0 0 5%;
+header {
+    background: url('../_assets/banner.jpg') bottom center / cover no-repeat;
+}
+
+h1 {
+    padding: 15% 0 0 0;
 }
 
 nav ul{
@@ -164,109 +204,89 @@ nav ul{
 }
 
 nav ul li{
-    display: block;
-    text-align: center;
-    
     border-bottom: 1px solid #fff;
 }
 
-nav a, nav a:hover {
-    text-decoration: none;
-    display: block;
-    padding: 10px 0;
+nav ul li a {
     background: rgba(247, 138, 22, 0.80);
-    
+    display: block;
+    width: 100%;
     transition: .5s;
+    padding: 7px;
+    transition: 0.3s ease-in-out;
 }
 
 nav a:hover {
-    color: #000;
-}
-
-nav a:active {
+    background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
-    background: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
 }
 
 
 /* Wrapper
 ============================*/
 
-#wrapper {
+.wrapper {
     margin: 0 auto;
     padding: 30px 15px;
 }
 
-h2 {
-    padding: 50px 0 20px 0;
-}
-
-#lookup h2 {
+.wrapper h2 {
+    margin-bottom: 17px;
     padding: 30px 0 20px 0;
 }
 
-#lookup input, #lookup select {
+.description h2 {
+    margin-bottom: 25px;
+}
+
+input, textarea {
+    outline: none;
+    resize: none;
+}
+
+form input, form textarea, form select, button {
     width: 100%;
     border-radius: 3px;
-    background: rgba(247, 138, 22, 0.85);
-    border: 1px solid black;
-    font-size: 1rem;
-    padding: 10px 0 10px 0;
-    margin: 0 0 10px 0;
     font-family: inherit;
+    font-size: inherit;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    border: 1px solid black;
+    background: #fff;
+    text-align: center;
+    transition: 0.5s;
 }
 
-input[type="search"]:focus, #lookup textarea:focus {
-    box-shadow: inset #666 0 0 15px;
+input[type="search"], .lookup select {
+    background: rgba(247, 138, 22, 0.80);
+    height: 45px;
 }
 
-#lookup input[type="button"] {
+textarea {
+    min-height: 150px;
+}
+
+textarea[name="message"]:focus, input[type="search"]:focus {
+    box-shadow: inset #000 0 0 10px;
+}
+
+textarea[name="message"] {
+    border: 3px solid rgba(247, 138, 22, 0.80);
+}
+
+textarea[name="message"], textarea[name="results"] {
+    text-align: left;
+}
+
+input[type="button"] {
     color: #fff;
     background: #000;
 }
 
-#lookup input[type="button"]:hover {
-    transition: .5s;
-    background: #fff;
+input[type="button"]:hover {
     color: #000;
-} 
-
-#lookup input[type="button"]:active {
     background: rgba(247, 138, 22, 0.80);
-}
-
-input[type="search"]::-webkit-input-placeholder {
-    text-align: center;
-}
-
-input[type="search"] input-placeholder {
-    text-align: center;
-}
-
-::-webkit-input-placeholder {
-    color: #000;
-}
-
-input-placeholder {
-    color: #000;
-}
-
-#lookup-results, #lookup textarea {
-    display: block;
-    width: 100%;
-    margin: 0, auto;
-    height: 200px;
-    background-color: #ddd;
-    border: 1px solid black;
-    border-radius: 3px;
-    margin: 0 0 10px 0;
-    text-indent: 5px;
-    padding-top: 5px;
-    font-size: 1rem;
-}
-
-#record-description p {
-    text-indent: 15px;
 }
 
 
@@ -274,7 +294,7 @@ input-placeholder {
 ============================*/
 
 footer {
-    padding: 50px 25px;
+    padding: 35px 25px;
     text-align: center;
     font-size: 0.75em;
 }
@@ -283,15 +303,15 @@ footer a, footer p {
     padding: 10px;
 }
 
+footer ul li:first-child img{
+    margin: 10px;
+    width: 150px;
+    
+}
 
 footer ul li:nth-child(n+2) img {
     width: 45px;
     margin-top: 10px;
-}
-
-#logo img {
-    width: 150px;
-    margin: 10px;
 }
 
 
@@ -300,6 +320,10 @@ footer ul li:nth-child(n+2) img {
 ============================*/
 
 @media screen and (min-width: 600px) {
+    h1 {
+        text-align: left;
+        padding-left: 3%;
+    }
     
     nav {
         background: rgba(247, 138, 22, 0.80);
@@ -307,7 +331,6 @@ footer ul li:nth-child(n+2) img {
     }
     
     nav ul {
-        padding: 0;
         text-align: center;
     }
     
@@ -320,71 +343,93 @@ footer ul li:nth-child(n+2) img {
     nav ul li a, nav ul li a:hover {
         background: none;
         border: none;
+        padding: 15px 0;
     }
     
     nav ul li a:active, nav ul li a:active {
         text-shadow: #000 0 0 15px;
     }
     
-    #wrapper {
-        padding-top: 0;
-        width: 80%;
+    /* flexbox Nav*/
+
+    nav ul{
+        display: flex;
+        justify-content: space-between;
     } 
+
+    nav ul li {
+        align-items: stretch;
+    }
+    
+    .wrapper {
+        padding-top: 0;
+        width: 90%;
+    } 
+    
+    
+    input[type="button"] {
+        width: 49%;
+        float:left;
+    }
+    
+    input[type="button"]:last-of-type {
+        float:right;
+    }
 }
 
 @media screen and (min-width: 800px) {
     
-    #wrapper {
+    .wrapper {
         width: 65%;
     }
     
-    nav ul li{
-        padding: 0 3%;
+    nav ul li {
+        padding: 0 2%;
     }
+    
 }
 
 @media screen and (min-width: 960px) {
     
-    #title {
-        padding: 10% 0 0 5%;
-        position: relative;
-    }
-    
-    h1 {
-        font-size: 6em;
-    }
-    
-    h1:last-of-type {
-        font-size: 4.5em;
-    }
-    
     nav ul li{
-        padding: 0 4%;
+        padding: 0 3.25%;
     }
     
-    #wrapper {
+    .wrapper {
         width: 95%
     }
     
-    #lookup {
+    .description {
         float: left;
-        width: 45%;
+        width: 40%;
     }
     
-    #record-description {
+    .lookup {
         float: right;
-        width: 45%;
+        width: 55%;
     }
     
-    #record-description h2 {
+    .description h2 {
         padding: 30px 0 10px 0;
     }
     
-    
-       
 }
 
 @media screen and (min-width: 1200px) {
+    
+    .description {
+        float: left;
+        width: 30%;
+    }
+    
+    .lookup {
+        float: right;
+        width: 60%;
+    }
+    
+    .description h2 {
+        padding: 30px 0 10px 0;
+    }
     
     footer ul {
         width: 100%;
@@ -392,7 +437,7 @@ footer ul li:nth-child(n+2) img {
     
     footer ul li {
         display: inline-block;
-        text-decoration: none;
+        list-style-type: none;
     }
     
     footer ul li:first-child {
@@ -410,8 +455,12 @@ footer ul li:nth-child(n+2) img {
 }
 
 @media screen and (min-width: 1500px) {
-    #wrapper {
-        max-width: 1400px;
+    body {
+        font-size: 1vw;
+    }
+    
+    .wrapper {
+        width: 80%;
     }
     
     h1 {
@@ -424,5 +473,13 @@ footer ul li:nth-child(n+2) img {
     
     nav ul li{
         padding: 0 5%;
+    }
+    
+    nav ul li a {
+        font-size: 1.5em;
+    }
+    
+    h2 {
+        font-size: 2.25em;
     }
 }
