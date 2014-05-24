@@ -1,5 +1,5 @@
 # Python Black List checker - Prototype
-# Version 0.0.4
+# Version 0.0.6
 import re, socket, sys, getopt
 
 #globals
@@ -55,7 +55,6 @@ def ip_check():
 #Check our IP against a list of blacklists, 
 #returns a message if it is on the list or if the BL hostname is invalid.
 def blacklist_check(ip, ip_rev):
-    
     result = ip + '\n'
     if ip_valid:
         for blist in blacklists:

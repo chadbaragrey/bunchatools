@@ -1,5 +1,5 @@
 # MX record lookup tool - Prototype
-# Version 0.0.0
+# Version 0.0.1
 # Requires DNSPython - www.dnspython.org
 
 import dns.resolver, sys
