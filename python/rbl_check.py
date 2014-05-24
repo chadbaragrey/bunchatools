@@ -66,7 +66,8 @@ def blacklist_check(ip, ip_rev):
             except socket.timeout:
                 result += 'timeout' + blist
         sys.exit(result)
-        
-blacklist_file()
-ip_check()
-blacklist_check(ip, ip_rev)
+
+if __name__ == '__main__':
+    blacklist_file()
+    ip_check()
+    blacklist_check(ip, ip_rev)
