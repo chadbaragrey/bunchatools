@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <script src="js/prefixfree.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>DNS Explained</title>
@@ -15,10 +14,10 @@
         <h1>U<span class="kern">K</span>2oo<span class="kern">ls</span></h1>
         <nav>
             <ul>
-                <li class="active-query"><a href="index.html">DNS</a></li>
+                <li><a href="index.html">DNS</a></li>
                 <li><a href="mx.html">MX (email)</a></li> <!--this class should be moved to whatever query is currenly active-->
                 <li><a href="email-headers.html">Email Headers</a></li>
-                <li><a href="whois.html">WHOIS</a></li>
+                <li class="active-query"><a href="whois.html">WHOIS</a></li>
                 <li><a href="my-public-ip.html">My Public IP</a></li><!--The visitor's public IP should automatically be generated when the click the "My Public IP" link in the Nav, then have the results displayed in the results textarea-->
                 <li><a href="blacklists.html">Blacklists</a></li>
             </ul>
@@ -28,16 +27,16 @@
     <section class="wrapper cf">
         
         <article class="description">
-            <h2>What is a DNS Record?</h2>
+            <h2>What is WHOIS Information?</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, illo, architecto numquam modi adipisci labore doloremque reiciendis facere voluptatibus repudiandae fugiat totam repellat nihil dolor nam laborum laboriosam sunt perferendis.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, illo, architecto numquam modi adipisci labore doloremque reiciendis facere voluptatibus repudiandae fugiat totam repellat nihil dolor nam laborum laboriosam sunt perferendis.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, illo, architecto numquam modi adipisci labore doloremque reiciendis facere voluptatibus repudiandae fugiat totam repellat nihil dolor nam laborum laboriosam sunt perferendis.</p>
         </article>   
         
          <article class="lookup">
-            <h2>DNS Lookup</h2>
+            <h2>Whois Lookup</h2>
             <form action="#" id="lookup-form" >
-                <input type="search" name="lookup-query" placeholder="Enter domain name or IP address"> <!--when user hits enter, it puts the results into the first textarea-->
+                <input type="search" name="lookup-query" placeholder="Enter domain name "> <!--when user hits enter, it puts the results into the first textarea-->
                 <input type="submit" value="Submit">
                 <textarea name="results" id="results" readonly>Your search results will appear here.</textarea>
                 <select name="brands" id="brands" required>
@@ -58,14 +57,14 @@
     </section>    
     
     <footer>
+<!--        <img src="#" alt="powered by UK2Group">-->
         <ul>
-            <li><a href="http://uk2group.com"><img src="_assets/logo.png" alt="UK2 Group logo"></a></li>
+            <li><img src="_assets/logo.png" alt="UK2 Group logo"></li>
             <li><a class="uk2group-link" href="http://uk2group.com">Check us out for your domain registration or web hosting solution!</a><br>&copy;1988-2014</li>
             <li><a href="https://twitter.com/UK2Group"><img src="_assets/twitter75.png" alt="UK2Group on Twitter"></a> <a href="https://www.linkedin.com/company/uk2-group"><img src="_assets/linkedin75.png" alt="UK2Group on Linked in"></a></li>
         </ul>
     </footer>
     
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </body>
 </html>

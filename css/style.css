@@ -112,7 +112,8 @@ body {
     background-color: #fff;
 }
 
-header, footer {
+header, 
+footer {
     background: #000;
     color: #fff;
 }
@@ -127,7 +128,11 @@ body {
     
 }
 
-h1, h2, h3, h4, nav {
+h1, 
+h2, 
+h3, 
+h4, 
+nav {
     font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
 }
@@ -136,7 +141,7 @@ h1 {
     font-weight: bold;
     font-size: 3.75em;
     font-size: 8vmax;
-    letter-spacing: -5px;
+    letter-spacing: -2px;
 }
 
 .kern {
@@ -154,8 +159,12 @@ nav a {
     text-decoration: none;
 }
 
-p, textarea  {
+p {
     text-indent: 15px;
+}
+
+.uk2group-link {
+    letter-spacing: 0.60px;
 }
 
 
@@ -165,21 +174,23 @@ p, textarea  {
 
 a {
     color: inherit;
-    transition: 0.5s ease-in-out;
+    transition: 0.5s;
+    display: inline-block;
 }
 
-a:hover {
+a:hover{
     color: rgb(247, 138, 22);
     transform: scale(1.25);
-    transition: 0.5s;
 }
 
 a:visited {
     color: inherit;
 }
 
-a:active, input[type="button"]:active {
-    transform: scale(0.75);
+input[type="button"]:active, 
+a:active, 
+input[type="submit"]:active {
+    transform: scale(0.75) ;
 }
 /* this is for whatever query is active, color will change to help user know which one they are currently using */
 .active-query a {
@@ -223,6 +234,7 @@ nav a:hover {
 }
 
 
+
 /* Wrapper
 ============================*/
 
@@ -240,53 +252,82 @@ nav a:hover {
     margin-bottom: 25px;
 }
 
-input, textarea {
+input, 
+textarea, 
+select {
     outline: none;
     resize: none;
 }
 
-form input, form textarea, form select, button {
+form input, 
+form textarea, 
+form select, 
+button {
     width: 100%;
     border-radius: 3px;
     font-family: inherit;
     font-size: inherit;
     margin: 0 0 15px 0;
     padding: 10px;
-    border: 1px solid black;
-    background: #fff;
+    border: 3px solid black;
+    color: #fff;
     text-align: center;
     transition: 0.5s;
 }
 
-input[type="search"], .lookup select {
+input[type="search"], 
+.lookup select, 
+input[type="submit"] {
     background: rgba(247, 138, 22, 0.80);
-    height: 45px;
+    height: 50px;
+}
+
+.lookup select {
+    color: #000;
+}
+
+input[type="search"] {
+    width: 73%;
+    float: left;
+    text-align: left;
+}
+
+input[type="submit"] {
+    width: 25%;
+    float: right;
 }
 
 textarea {
     min-height: 150px;
 }
 
-textarea[name="message"]:focus, input[type="search"]:focus {
+textarea[name="message"]:focus, 
+input[type="search"]:focus {
     box-shadow: inset #000 0 0 10px;
+    color: #fff;
 }
 
 textarea[name="message"] {
     border: 3px solid rgba(247, 138, 22, 0.80);
 }
 
-textarea[name="message"], textarea[name="results"] {
+textarea[name="message"], 
+textarea[name="results"] {
     text-align: left;
-}
-
-input[type="button"] {
-    color: #fff;
-    background: #000;
-}
-
-input[type="button"]:hover {
     color: #000;
-    background: rgba(247, 138, 22, 0.80);
+}
+
+input[type="button"], 
+input[type="submit"] {
+    background: #000;
+    line-height: 1;
+}
+
+input[type="button"]:hover, 
+input[type="submit"]:hover {
+    color: #000;
+    background-color: #fff;
+    box-shadow: inset 0 0 
 }
 
 
@@ -297,10 +338,21 @@ footer {
     padding: 35px 25px;
     text-align: center;
     font-size: 0.75em;
+    margin-top: 20px;
 }
 
-footer a, footer p {
+footer a, 
+footer p {
     padding: 10px;
+}
+
+.uk2group-link {
+    transition: none;
+}
+
+.uk2group-link:hover {
+    transform: none;
+    color: #f78a16;
 }
 
 footer ul li:first-child img{
@@ -312,6 +364,40 @@ footer ul li:first-child img{
 footer ul li:nth-child(n+2) img {
     width: 45px;
     margin-top: 10px;
+}
+
+footer ul li {
+    line-height: 1.25;
+}
+
+
+
+/* Page: Email Headers
+============================*/
+
+.email-headers-form input[type="submit"]  {
+    width: 100%;
+}
+
+.email-headers-form textarea {
+    width: 100%;
+    min-height: 150px;
+    text-align: left;
+    color: #000;  
+}
+
+.email-headers-form textarea:first-of-type {
+    border: 3px solid rgba(247, 138, 22, 0.80)
+}
+
+
+
+/* Page: My Public IP
+============================*/
+
+.my-public-ip-form input[type="search"], 
+.my-public-ip-form input[type="submit"]{
+    display: none;
 }
 
 
@@ -340,13 +426,15 @@ footer ul li:nth-child(n+2) img {
         border: none;
     }
     
-    nav ul li a, nav ul li a:hover {
+    nav ul li a, 
+    nav ul li a:hover {
         background: none;
         border: none;
         padding: 15px 0;
     }
     
-    nav ul li a:active, nav ul li a:active {
+    nav ul li a:active, 
+    nav ul li a:active {
         text-shadow: #000 0 0 15px;
     }
     
@@ -379,6 +467,10 @@ footer ul li:nth-child(n+2) img {
 
 @media screen and (min-width: 800px) {
     
+    h1 {
+        letter-spacing: -2px;
+    }
+    
     .wrapper {
         width: 65%;
     }
@@ -390,6 +482,10 @@ footer ul li:nth-child(n+2) img {
 }
 
 @media screen and (min-width: 960px) {
+    
+    h1 {
+        letter-spacing: -3px;
+    }
     
     nav ul li{
         padding: 0 3.25%;
@@ -419,7 +515,7 @@ footer ul li:nth-child(n+2) img {
     
     .description {
         float: left;
-        width: 30%;
+        width: 35%;
     }
     
     .lookup {
