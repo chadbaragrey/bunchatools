@@ -1,6 +1,6 @@
 # Python Black List checker - Prototype
 # Date 5/24/2014
-# Version 0.0.8
+# Version 0.0.9
 
 import re, socket, sys, getopt
 
@@ -64,27 +64,27 @@ def blacklist_check():
             try:
                 socket.gethostbyname(ip_rev + '.' + blist)
                 result += blist + '\n'
-            except socket.gaierror:
-                pass
+            except socket.gaierror as err:
+                result += err + '\n'
             except socket.timeout:
-                result += 'timeout' + blist
+                result += 'timeout' + blist + '\n'
         sys.exit(result)
-		
+
 def main():
 	global ip, host
 	try:
 		opts, args = getopt.getopt(sys.argv[1:], "i:h:", ["ipaddress=", "hostname="])
-		
+
 	except getopt.GetoptError:
 		sys.exit('arg error')
-		
+
 	for opt, arg in opts:
 		if opt in ('-i', '--ipaddress'):
 			ip = arg
-			
+
 			ip_check()
 			blacklist_check()
-			
+
 		elif opt in ('-h', '--hostname'):
 			host = arg
 
