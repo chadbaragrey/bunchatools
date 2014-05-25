@@ -1,6 +1,6 @@
 # Python Black List checker - Prototype
 # Date 5/24/2014
-# Version 0.0.7
+# Version 0.0.8
 
 import re, socket, sys, getopt
 
