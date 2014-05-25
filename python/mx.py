@@ -15,17 +15,17 @@ try:
         results = results + rec.to_text() + '\n'
     sys.exit(results)
     
-except dns.resolver.NoAnswer:
-    pass
+except dns.resolver.NoAnswer as err:
+    sys.exit(err)
 
-except dns.resolver.NXDOMAIN:
-    pass
+except dns.resolver.NXDOMAIN as err:
+    sys.exit(err)
 
-except dns.resolver.YXDOMAIN:
-    pass
+except dns.resolver.YXDOMAIN as err:
+    sys.exit(err)
 
-except dns.resolver.NoNameservers:
-    pass
+except dns.resolver.NoNameservers as err:
+    sys.exit(err)
 
-except dns.resolver.Timeout:
-    pass
+except dns.resolver.Timeout as err:
+    sys.exit(err)
