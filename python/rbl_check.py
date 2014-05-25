@@ -79,13 +79,13 @@ def main():
 		sys.exit('arg error')
 		
 	for opt, arg in opts:
-		if '-i' in opt:
+		if opt in ('-i', '--ipaddress='):
 			ip = arg
 			
 			ip_check()
 			blacklist_check()
 			
-		elif '-h' in opt:
+		elif opt in ('-h', '--hostname='):
 			host = arg
 
 if __name__ == '__main__':
