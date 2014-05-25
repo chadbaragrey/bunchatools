@@ -5,7 +5,7 @@
 import dns.resolver, sys
 
 hostname = sys.argv[1]
-rec_type = 'mx' #String of the record type: A, MX, NS
+rec_type = 'MX' #String of the record type: A, MX, NS
 
 results = ''
 
