@@ -1,12 +1,15 @@
 # Python Black List checker - Prototype
-# Version 0.0.6
+# Date 5/24/2014
+# Version 0.0.7
+
 import re, socket, sys, getopt
 
 #globals
 blacklists = []
-ip = sys.argv[1]
+ip = ''
 ip_rev = ''
 ip_valid = False
+host = ''
 
 socket.setdefaulttimeout(30)
 
@@ -54,7 +57,7 @@ def ip_check():
 
 #Check our IP against a list of blacklists, 
 #returns a message if it is on the list or if the BL hostname is invalid.
-def blacklist_check(ip, ip_rev):
+def blacklist_check():
     result = ip + '\n'
     if ip_valid:
         for blist in blacklists:
@@ -66,8 +69,26 @@ def blacklist_check(ip, ip_rev):
             except socket.timeout:
                 result += 'timeout' + blist
         sys.exit(result)
+		
+def main():
+	global ip, host
+	try:
+		opts, args = getopt.getopt(sys.argv[1:], "i:h:", ["ipaddress=", "hostname="])
+		
+	except getopt.GetoptError:
+		sys.exit('arg error')
+		
+	for opt, arg in opts:
+		if '-i' in opt:
+			ip = arg
+			
+			ip_check()
+			blacklist_check()
+			
+		elif '-h' in opt:
+			host = arg
 
 if __name__ == '__main__':
-    blacklist_file()
-    ip_check()
-    blacklist_check(ip, ip_rev)
+	blacklist_file()
+	main()
+  
